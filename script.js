@@ -55,6 +55,9 @@ function toggleMobileMenu() {
 
 // Form handling
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize EmailJS with your Public Key
+    emailjs.init('mZp5cF-gAMXm8ABbP'); // <--- Reemplaza con tu Public Key de EmailJS
+
     const form = document.getElementById('appointment-form');
     const submitBtn = document.getElementById('submit-btn');
 
@@ -62,12 +65,14 @@ document.addEventListener('DOMContentLoaded', function() {
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            // Get form data
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
+            // Validate form data directly from form elements
+            const name = document.getElementById('name').value;
+            const company = document.getElementById('company').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const reason = document.getElementById('reason').value;
 
-            // Validate form
-            if (!validateForm(data)) {
+            if (!validateForm({ name, company, email, phone, reason })) {
                 return;
             }
 
@@ -76,21 +81,22 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.textContent = 'Enviando...';
 
             try {
-                // Simulate API call
-                await new Promise(resolve => setTimeout(resolve, 1500));
+                // Send email using EmailJS
+                await emailjs.sendForm('service_wq7irpk', 'template_k661ka6', this);
 
                 // Show success message
-                showToast('¡Cita agendada exitosamente!', 'Nos pondremos en contacto contigo pronto para confirmar tu cita.', 'success');
+                showToast('¡Solicitud enviada!', 'Nos pondremos en contacto contigo pronto.', 'success');
 
                 // Reset form
                 form.reset();
 
             } catch (error) {
+                console.error('Failed to send email:', error);
                 showToast('Error', 'Hubo un problema al enviar tu solicitud. Por favor, intenta de nuevo.', 'error');
             } finally {
                 // Reset button
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Agendar Cita';
+                submitBtn.textContent = 'Enviar Solicitud';
             }
         });
     }
@@ -98,7 +104,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Form validation
 function validateForm(data) {
-    const requiredFields = ['name', 'email', 'phone', 'date', 'time', 'reason'];
+    // Updated required fields to match the form
+    const requiredFields = ['name', 'company', 'email', 'phone', 'reason'];
 
     for (const field of requiredFields) {
         if (!data[field] || data[field].trim() === '') {
@@ -117,7 +124,7 @@ function validateForm(data) {
     // Phone validation (basic)
     const phoneRegex = /^\d{10,15}$/;
     if (!phoneRegex.test(data.phone.replace(/\s+/g, ''))) {
-        showToast('Error', 'Por favor ingresa un teléfono válido (solo números).', 'error');
+        showToast('Error', 'Por favor ingresa un teléfono válido (solo números, sin espacios ni guiones).', 'error');
         return false;
     }
 
@@ -127,11 +134,10 @@ function validateForm(data) {
 function getFieldName(field) {
     const fieldNames = {
         name: 'Nombre completo',
+        company: 'Empresa',
         email: 'Correo electrónico',
         phone: 'Teléfono',
-        date: 'Fecha preferida',
-        time: 'Hora preferida',
-        reason: 'Motivo de la consulta'
+        reason: 'Mensaje'
     };
     return fieldNames[field] || field;
 }
