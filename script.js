@@ -106,7 +106,7 @@ function getFieldName(field) {
 document.addEventListener('DOMContentLoaded', function() {
     // --- Initialize EmailJS ---
     // RECUERDA: Reemplaza con tus claves reales de EmailJS
-    emailjs.init('YOUR_PUBLIC_KEY');
+    emailjs.init('mZp5cF-gAMXm8ABbP');
 
     // --- Initialize Form and Captcha ---
     const form = document.getElementById('appointment-form');
@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             try {
                 // RECUERDA: Reemplaza con tus claves reales de EmailJS
-                await emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this);
+                await emailjs.sendForm('service_wq7irpk', 'template_k661ka6', this);
 
                 Swal.fire({ icon: 'success', title: '¡Solicitud Enviada!', text: 'Gracias por contactarnos. Nos pondremos en contacto contigo pronto.' });
                 form.reset();
