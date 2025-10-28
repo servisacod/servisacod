@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros - 11 Años Cuidando Familias | SERVICIO SACOD</title>
+    <meta name="description" content="Conoce la historia, misión y visión de SERVICIO SACOD, C.A. Más de 11 años como líderes en atención médica y enfermería a domicilio en Caracas.">
+    <meta name="author" content="SERVICIO SACOD, C.A.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav id="navigation" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <a href="/" class="flex items-center gap-2 group"><img src="assets/logo2.png" alt="SACOD Logo" style="width: 20%;"></a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="/" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Inicio</a>
+                    <a href="sobre-nosotros.html" class="text-blue-600 font-semibold transition-colors">Sobre Nosotros</a>
+                    <a href="servicios.html" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Servicios</a>
+                    <a href="blog.html" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Blog</a>
+                    <a href="contacto.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">Contacto</a>
+                </div>
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2">
+                    <svg id="menu-icon" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div id="mobile-menu" class="md:hidden py-4 border-t bg-white/95 backdrop-blur-md hidden">
+                <div class="flex flex-col gap-4">
+                    <a href="/" class="text-gray-700 hover:text-blue-600 transition-colors font-medium text-left px-4 py-2">Inicio</a>
+                    <a href="sobre-nosotros.html" class="text-blue-600 font-semibold transition-colors text-left px-4 py-2">Sobre Nosotros</a>
+                    <a href="servicios.html" class="text-gray-700 hover:text-blue-600 transition-colors font-medium text-left px-4 py-2">Servicios</a>
+                    <a href="blog.html" class="text-gray-700 hover:text-blue-600 transition-colors font-medium text-left px-4 py-2">Blog</a>
+                    <a href="contacto.html" class="w-full bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium text-left mt-2">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24">
+        <!-- Header Section -->
+        <section class="bg-white py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800">11 Años Dedicados al Cuidado de la Salud de las Familias Venezolanas</h1>
+            </div>
+        </section>
+
+        <!-- History Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <h2 class="text-3xl font-bold text-gray-800">Nuestra Historia</h2>
+                        <p class="text-gray-600 leading-relaxed">SERVICIO SACOD, C.A. nació hace más de una década con una misión clara: humanizar la atención médica y hacerla accesible para todos. Fundada por profesionales de la salud que vieron la creciente necesidad de un servicio de asistencia médica en casa confiable, comenzamos como un pequeño equipo con una gran visión. Hoy, después de 11 años de trabajo dedicado, nos hemos consolidado como una empresa líder y un pilar de confianza para cientos de familias en Caracas, manteniendo siempre la misma pasión por el bienestar de nuestros pacientes.</p>
+                    </div>
+                    <div>
+                        <!-- Marcador de Posición para Imagen: Foto del equipo fundador o una imagen simbólica de los inicios. -->
+                        <img src="assets/doctor-1.jpg" alt="Equipo fundador de SERVICIO SACOD" class="rounded-lg shadow-xl w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission, Vision, Values Section -->
+        <section class="bg-blue-50 py-20">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-blue-600 mb-2">Misión</h3>
+                            <p class="text-gray-600">Brindar servicios de salud a domicilio de la más alta calidad, con un enfoque humano y profesional, mejorando la calidad de vida de nuestros pacientes y brindando tranquilidad a sus familias.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-blue-600 mb-2">Visión</h3>
+                            <p class="text-gray-600">Ser la empresa de referencia en atención médica domiciliaria en Venezuela, reconocida por nuestra excelencia operativa, integridad profesional y la calidez humana que nos caracteriza.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Nuestros Valores</h3>
+                        <ul class="space-y-4 text-gray-600">
+                            <li class="flex items-start"><span class="font-bold text-blue-600 mr-2">✔</span> <strong>Profesionalismo:</strong> Actuamos con rigor, ética y los más altos estándares de calidad en cada servicio.</li>
+                            <li class="flex items-start"><span class="font-bold text-blue-600 mr-2">✔</span> <strong>Empatía:</strong> Comprendemos la situación de cada paciente y su familia, ofreciendo un trato cercano y compasivo.</li>
+                            <li class="flex items-start"><span class="font-bold text-blue-600 mr-2">✔</span> <strong>Responsabilidad:</strong> Asumimos el compromiso de cuidar tu salud con la máxima seriedad y dedicación.</li>
+                            <li class="flex items-start"><span class="font-bold text-blue-600 mr-2">✔</span> <strong>Ética:</strong> La confidencialidad y el respeto por el paciente son el fundamento de nuestro trabajo.</li>
+                            <li class="flex items-start"><span class="font-bold text-blue-600 mr-2">✔</span> <strong>Confianza:</strong> Construimos relaciones a largo plazo basadas en la transparencia y la excelencia.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nuestro Equipo</h2>
+                    <p class="text-lg text-gray-600">El corazón de SERVICIO SACOD es nuestro equipo. Contamos con Médicos, Licenciados en Enfermería y Fisioterapeutas titulados y colegiados, con amplia experiencia en el área clínica y domiciliaria. Cada miembro de nuestro personal pasa por un riguroso proceso de selección y capacitación continua para garantizar no solo su competencia técnica, sino también su calidad humana y vocación de servicio.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Team Member 1 -->
+                    <div class="text-center">
+                        <!-- Marcador de Posición para Imagen: Foto profesional y amigable de un miembro del equipo. -->
+                        <img src="assets/doctor-2.jpg" alt="Miembro del equipo SACOD 1" class="w-48 h-48 mx-auto rounded-full shadow-lg mb-4">
+                        <h4 class="text-xl font-bold text-gray-800">Dr. Nombre Apellido</h4>
+                        <p class="text-blue-600">Médico Internista</p>
+                    </div>
+                    <!-- Team Member 2 -->
+                    <div class="text-center">
+                        <!-- Marcador de Posición para Imagen: Foto profesional y amigable de un miembro del equipo. -->
+                        <img src="assets/doctor-3.jpg" alt="Miembro del equipo SACOD 2" class="w-48 h-48 mx-auto rounded-full shadow-lg mb-4">
+                        <h4 class="text-xl font-bold text-gray-800">Lic. Nombre Apellido</h4>
+                        <p class="text-blue-600">Enfermería Especializada</p>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div class="text-center">
+                        <!-- Marcador de Posición para Imagen: Foto profesional y amigable de un miembro del equipo. -->
+                        <img src="assets/norkis.jpeg" alt="Miembro del equipo SACOD 3" class="w-48 h-48 mx-auto rounded-full shadow-lg mb-4">
+                        <h4 class="text-xl font-bold text-gray-800">Lic. Nombre Apellido</h4>
+                        <p class="text-blue-600">Fisioterapeuta</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid md:grid-cols-4 gap-8 mb-8 text-center md:text-left">
+                <div class="space-y-4">
+                    <a href="/" class="flex justify-center md:justify-start items-center gap-2 group"><img src="assets/logo.gif" alt="SACOD Logo" class="h-12"></a>
+                    <p class="text-sm text-gray-400">Salud y bienestar en la comodidad de tu hogar.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">Navegación</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/" class="text-gray-400 hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="sobre-nosotros.html" class="text-gray-400 hover:text-white transition-colors">Sobre Nosotros</a></li>
+                        <li><a href="servicios.html" class="text-gray-400 hover:text-white transition-colors">Servicios</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="contacto.html" class="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">Servicios Populares</h3>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>Enfermería a Domicilio</li>
+                        <li>Cura de Heridas</li>
+                        <li>Fisioterapia a Domicilio</li>
+                        <li>Médico a Domicilio</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">Contacto Directo</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center justify-center md:justify-start gap-2 text-gray-400">
+                            <svg class="h-4 w-4 flex-shrink-0 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            <span>+58 414 111 4934</span>
+                        </li>
+                        <li class="flex items-center justify-center md:justify-start gap-2 text-gray-400">
+                            <svg class="h-4 w-4 flex-shrink-0 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            <span>servisacod@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-700 text-center text-sm text-gray-500">
+                <p>© 2025 SERVICIO SACOD, C.A. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

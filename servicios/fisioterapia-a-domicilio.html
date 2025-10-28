@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fisioterapia a Domicilio en Caracas | Rehabilitación Física | SACOD</title>
+    <meta name="description" content="Servicio de fisioterapia y terapia física en casa en Caracas. Terapeutas expertos para tratar lesiones y post-operatorios. Recupera tu movilidad con SACOD.">
+    <meta name="author" content="SERVICIO SACOD, C.A.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav id="navigation" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <a href="/" class="flex items-center gap-2 group"><img src="../assets/logo2.png" alt="SACOD Logo" style="width: 20%;"></a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="/" class="text-gray-700 hover:text-blue-600 font-medium">Inicio</a>
+                    <a href="../sobre-nosotros.html" class="text-gray-700 hover:text-blue-600 font-medium">Sobre Nosotros</a>
+                    <a href="../servicios.html" class="text-blue-600 font-semibold">Servicios</a>
+                    <a href="../blog.html" class="text-gray-700 hover:text-blue-600 font-medium">Blog</a>
+                    <a href="../contacto.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 font-medium">Contacto</a>
+                </div>
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2">...</button>
+            </div>
+            <div id="mobile-menu" class="md:hidden py-4 border-t bg-white/95 hidden">...</div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24">
+        <section class="bg-white py-16">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <h1 class="text-4xl md:text-5xl font-bold text-gray-800">Fisioterapia a Domicilio en Caracas</h1>
+                        <p class="text-lg text-gray-600">La recuperación de una lesión o cirugía es más efectiva en un entorno cómodo. Nuestro equipo de fisioterapeutas diseña y ejecuta planes de rehabilitación personalizados en tu hogar para ayudarte a restaurar la función, aliviar el dolor y mejorar tu calidad de vida.</p>
+                        <a href="../contacto.html" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 font-medium shadow-lg">Inicia tu Rehabilitación en Casa</a>
+                    </div>
+                    <div>
+                        <!-- Marcador de Posición para Imagen: Fisioterapeuta ayudando a un paciente con ejercicios de movilidad. -->
+                        <img src="../assets/doctor-2.jpg" alt="Fisioterapia a domicilio en Caracas" class="rounded-lg shadow-xl w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">¿Qué incluye nuestro servicio?</h2>
+                    <div class="grid md:grid-cols-2 gap-8 text-gray-600">
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><span class="text-blue-500 font-bold mr-3">✓</span>Evaluación fisioterapéutica inicial para definir objetivos.</li>
+                            <li class="flex items-start"><span class="text-blue-500 font-bold mr-3">✓</span>Terapia manual y masajes terapéuticos.</li>
+                            <li class="flex items-start"><span class="text-blue-500 font-bold mr-3">✓</span>Ejercicios terapéuticos para fortalecimiento y movilidad.</li>
+                        </ul>
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><span class="text-blue-500 font-bold mr-3">✓</span>Aplicación de agentes físicos (frío, calor).</li>
+                            <li class="flex items-start"><span class="text-blue-500 font-bold mr-3">✓</span>Rehabilitación neurológica (post-ACV).</li>
+                            <li class="flex items-start"><span class="text-blue-500 font-bold mr-3">✓</span>Rehabilitación post-operatoria (cadera, rodilla, hombro).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-blue-50 py-20">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6">Beneficios de la Terapia Física en Casa</h2>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-center gap-3"><strong class="text-blue-600">Tratamiento Personalizado:</strong> Plan 100% adaptado a tus necesidades y a tu entorno real.</li>
+                            <li class="flex items-center gap-3"><strong class="text-blue-600">Comodidad Absoluta:</strong> Evita el dolor, la fatiga y el estrés de los traslados.</li>
+                            <li class="flex items-center gap-3"><strong class="text-blue-600">Mayor Adherencia:</strong> La comodidad del hogar facilita el cumplimiento y la constancia en el tratamiento.</li>
+                        </ul>
+                    </div>
+                    <div class="text-center bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">¿Cuándo solicitar este servicio?</h3>
+                        <p class="text-gray-600">Después de una cirugía ortopédica, para tratar una lesión deportiva, en casos de dolor de espalda crónico, para la rehabilitación de un ACV o para mantener la movilidad en adultos mayores.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">...</footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

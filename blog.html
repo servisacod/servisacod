@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Salud y Bienestar | SERVICIO SACOD</title>
+    <meta name="description" content="Artículos y consejos sobre salud, enfermería, cuidados a domicilio, y bienestar para pacientes y familiares. Mantente informado con SACOD.">
+    <meta name="author" content="SERVICIO SACOD, C.A.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav id="navigation" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <a href="/" class="flex items-center gap-2 group"><img src="assets/logo2.png" alt="SACOD Logo" style="width: 20%;"></a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="/" class="text-gray-700 hover:text-blue-600 font-medium">Inicio</a>
+                    <a href="sobre-nosotros.html" class="text-gray-700 hover:text-blue-600 font-medium">Sobre Nosotros</a>
+                    <a href="servicios.html" class="text-gray-700 hover:text-blue-600 font-medium">Servicios</a>
+                    <a href="blog.html" class="text-blue-600 font-semibold">Blog</a>
+                    <a href="contacto.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 font-medium">Contacto</a>
+                </div>
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2">...</button>
+            </div>
+            <div id="mobile-menu" class="md:hidden py-4 border-t bg-white/95 hidden">...</div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24">
+        <section class="bg-white py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800">Blog de Salud y Bienestar SACOD</h1>
+                <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Un espacio con información valiosa, consejos y recursos para ayudarte a cuidar de tu salud y la de tus seres queridos.</p>
+            </div>
+        </section>
+
+        <!-- Blog Posts Grid -->
+        <section class="py-20">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Blog Post 1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3">5 Beneficios Clave del Cuidado a Domicilio para Adultos Mayores</h3>
+                            <p class="text-gray-600 mb-4">Descubre por qué cada vez más familias eligen la atención en casa para el bienestar físico y emocional de sus seres queridos...</p>
+                            <a href="#" class="font-semibold text-blue-600 hover:text-blue-700">Leer artículo completo →</a>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post 2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3">¿Cuándo es el Momento de Llamar a un Fisioterapeuta a Domicilio?</h3>
+                            <p class="text-gray-600 mb-4">El dolor de espalda, la rigidez o la pérdida de equilibrio son señales que no deberías ignorar. Te explicamos cuándo es momento de actuar...</p>
+                            <a href="#" class="font-semibold text-blue-600 hover:text-blue-700">Leer artículo completo →</a>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post 3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3">Sueros Multivitamínicos: ¿Qué son y Cómo Pueden Ayudarte?</h3>
+                            <p class="text-gray-600 mb-4">Desmitificamos la sueroterapia intravenosa y te explicamos cómo puede darte ese impulso de energía y salud que necesitas...</p>
+                            <a href="#" class="font-semibold text-blue-600 hover:text-blue-700">Leer artículo completo →</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">...</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

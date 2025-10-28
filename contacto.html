@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Servicio Médico a Domicilio en Caracas | SERVICIO SACOD</title>
+    <meta name="description" content="Contacta a SERVICIO SACOD para coordinar un servicio de enfermería, médico o laboratorio a domicilio en Caracas. Llámanos o escríbenos.">
+    <meta name="author" content="SERVICIO SACOD, C.A.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav id="navigation" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <a href="/" class="flex items-center gap-2 group"><img src="assets/logo2.png" alt="SACOD Logo" style="width: 20%;"></a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="/" class="text-gray-700 hover:text-blue-600 font-medium">Inicio</a>
+                    <a href="sobre-nosotros.html" class="text-gray-700 hover:text-blue-600 font-medium">Sobre Nosotros</a>
+                    <a href="servicios.html" class="text-gray-700 hover:text-blue-600 font-medium">Servicios</a>
+                    <a href="blog.html" class="text-gray-700 hover:text-blue-600 font-medium">Blog</a>
+                    <a href="contacto.html" class="text-blue-600 font-semibold">Contacto</a>
+                </div>
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2">...</button>
+            </div>
+            <div id="mobile-menu" class="md:hidden py-4 border-t bg-white/95 hidden">...</div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24">
+        <section class="bg-white py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800">Contáctanos y Coordina tu Servicio</h1>
+                <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">Nuestro equipo está listo para atender tu solicitud y aclarar todas tus dudas. Da el primer paso hacia tu bienestar o el de tu ser querido.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Info -->
+                    <div class="space-y-8">
+                        <div>
+                            <h2 class="text-2xl font-bold text-gray-800 mb-4">Información de Contacto</h2>
+                            <div class="space-y-4 text-gray-700">
+                                <p class="flex items-center"><strong class="text-blue-600 mr-2">📞 Teléfonos:</strong> +58 414 111 4934</p>
+                                <p class="flex items-center"><strong class="text-blue-600 mr-2">📧 Correo Electrónico:</strong> servisacod@gmail.com</p>
+                                <p class="flex items-center"><strong class="text-blue-600 mr-2">⏰ Horario:</strong> Lunes a Viernes de 8:00 am a 5:00 pm.</p>
+                                <p class="flex items-start"><strong class="text-blue-600 mr-2">📍 Cobertura:</strong> Área metropolitana de Caracas. (Consulta disponibilidad para otras zonas).</p>
+                            </div>
+                        </div>
+                         <!-- Marcador de Posición para Imagen: Mapa del área de cobertura o una imagen genérica de contacto. -->
+                        <div class="mt-8">
+                           <img src="assets/logo.gif" alt="SACOD Logo" class="h-12" />
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Déjanos un Mensaje</h2>
+                        <form id="appointment-form" class="space-y-6">
+                            <div class="grid grid-cols-1 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Nombre completo</label>
+                                    <input type="text" id="name" name="name" placeholder="Tu Nombre" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Correo electrónico</label>
+                                    <input type="email" id="email" name="email" placeholder="tu@correo.com" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                 <div>
+                                    <label class="block text-sm font-medium mb-2">Teléfono</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="Tu número de teléfono" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Mensaje</label>
+                                <textarea id="reason" name="reason" placeholder="¿Cómo podemos ayudarte?" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 min-h-[120px]" required></textarea>
+                            </div>
+                            <div>
+                                <label id="captcha-label" class="block text-sm font-medium mb-2">Resuelve para continuar</label>
+                                <input type="number" id="captcha" name="captcha" placeholder="Resultado" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <button type="submit" id="submit-btn" class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors font-medium text-lg">Enviar Mensaje</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">...</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

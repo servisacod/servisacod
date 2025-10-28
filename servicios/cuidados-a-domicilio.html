@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuidados a Domicilio para Adultos Mayores en Caracas | SACOD</title>
+    <meta name="description" content="Servicio de cuidado y acompañamiento para adultos mayores y pacientes en Caracas. Asistencia profesional y humana en su propio hogar. Brinda tranquilidad a tu familia.">
+    <meta name="author" content="SERVICIO SACOD, C.A.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav id="navigation" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <a href="/" class="flex items-center gap-2 group"><img src="../assets/logo2.png" alt="SACOD Logo" style="width: 20%;"></a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="/" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Inicio</a>
+                    <a href="../sobre-nosotros.html" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Sobre Nosotros</a>
+                    <a href="../servicios.html" class="text-blue-600 font-semibold transition-colors">Servicios</a>
+                    <a href="../blog.html" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Blog</a>
+                    <a href="../contacto.html" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium">Contacto</a>
+                </div>
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2">
+                    <svg id="menu-icon" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+            <div id="mobile-menu" class="md:hidden py-4 border-t bg-white/95 backdrop-blur-md hidden">
+                <!-- Mobile menu links -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-24">
+        <section class="bg-white py-16">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <h1 class="text-4xl md:text-5xl font-bold text-gray-800">Cuidados a Domicilio para Adultos Mayores y Pacientes</h1>
+                        <p class="text-lg text-gray-600">Brindamos un servicio integral de cuidados a domicilio enfocado en el bienestar, la compañía y la asistencia en las actividades diarias. Nuestro personal capacitado ofrece un apoyo fundamental para garantizar la calidad de vida de adultos mayores y personas con dependencia.</p>
+                        <a href="../contacto.html" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium shadow-lg">Consulta Nuestros Planes de Cuidado</a>
+                    </div>
+                    <div>
+                        <!-- Marcador de Posición para Imagen: Cuidador sonriente asistiendo a un adulto mayor. -->
+                        <img src="../assets/doctor-2.jpg" alt="Cuidados a domicilio para adultos mayores en Caracas" class="rounded-lg shadow-xl w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">¿Qué incluye nuestro servicio?</h2>
+                    <div class="grid md:grid-cols-2 gap-8 text-gray-600">
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><span class="text-blue-500 font-bold mr-3">✓</span>Acompañamiento diurno o nocturno.</li>
+                            <li class="flex items-start"><span class="text-blue-500 font-bold mr-3">✓</span>Asistencia con la higiene personal y el vestido.</li>
+                            <li class="flex items-start"><span class="text-blue-500 font-bold mr-3">✓</span>Ayuda con la movilidad y transferencias seguras.</li>
+                        </ul>
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><span class="text-blue-500 font-bold mr-3">✓</span>Preparación de comidas ligeras y supervisión de la alimentación.</li>
+                            <li class="flex items-start"><span class="text-blue-500 font-bold mr-3">✓</span>Recordatorio para la toma de medicamentos.</li>
+                            <li class="flex items-start"><span class="text-blue-500 font-bold mr-3">✓</span>Realización de actividades recreativas y de estimulación cognitiva.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-blue-50 py-20">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-800 mb-6">Beneficios del Cuidado en el Hogar</h2>
+                        <ul class="space-y-4 text-gray-700">
+                            <li class="flex items-center gap-3"><strong class="text-blue-600">Seguridad y Compañía:</strong> Proporciona un entorno seguro y acompañamiento constante al paciente.</li>
+                            <li class="flex items-center gap-3"><strong class="text-blue-600">Tranquilidad Familiar:</strong> Ofrece un respiro y paz mental a los familiares y cuidadores principales.</li>
+                            <li class="flex items-center gap-3"><strong class="text-blue-600">Permanencia en Casa:</strong> Permite que el ser querido permanezca en su entorno familiar, lo que mejora su estado de ánimo y bienestar.</li>
+                        </ul>
+                    </div>
+                    <div class="text-center bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">¿Cuándo solicitar este servicio?</h3>
+                        <p class="text-gray-600">Para el cuidado diario de adultos mayores, para personas con Alzheimer o demencia, o para pacientes que necesitan supervisión constante pero no necesariamente cuidados de enfermería complejos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <!-- Footer content -->
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
