@@ -245,25 +245,30 @@
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-sm font-medium mb-2">Nombre completo</label>
-                                <input type="text" id="name" placeholder="Juan Pérez" class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                                <input type="text" id="name" name="name" placeholder="Juan Pérez" class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
                             </div>
                             <div>
                                 <label class="block text-sm font-medium mb-2">Empresa</label>
-                                <input type="text" id="company" placeholder="Nombre de la Aseguradora" class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                                <input type="text" id="company" name="company" placeholder="Nombre de la Aseguradora" class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
                             </div>
                             <div>
                                 <label class="block text-sm font-medium mb-2">Correo electrónico</label>
-                                <input type="email" id="email" placeholder="correo@ejemplo.com" class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                                <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
                             </div>
                              <div>
                                 <label class="block text-sm font-medium mb-2">Teléfono</label>
-                                <input type="tel" id="phone" placeholder="5512345678" class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                                <input type="tel" id="phone" name="phone" placeholder="5512345678" class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
                             </div>
                         </div>
 
                         <div>
                             <label class="block text-sm font-medium mb-2">Mensaje</label>
-                            <textarea id="reason" placeholder="Escriba su mensaje..." class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent min-h-[120px]" required></textarea>
+                            <textarea id="reason" name="reason" placeholder="Escriba su mensaje..." class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent min-h-[120px]" required></textarea>
+                        </div>
+
+                        <div>
+                            <label id="captcha-label" class="block text-sm font-medium mb-2">Resuelve la operación para continuar</label>
+                            <input type="number" id="captcha" name="captcha" placeholder="Resultado" class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" required>
                         </div>
 
                         <button type="submit" id="submit-btn" class="w-full bg-primary text-primary-foreground py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors font-medium text-lg">

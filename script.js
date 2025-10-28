@@ -61,28 +61,29 @@ function toggleMobileMenu() {
 }
 
 // --- FORM VALIDATION ---
-function validateForm(data) {
+function validateForm(form) {
     const requiredFields = ['name', 'company', 'email', 'phone', 'reason'];
 
-    for (const field of requiredFields) {
-        if (!data[field] || data[field].trim() === '') {
+    for (const fieldName of requiredFields) {
+        const field = form.elements[fieldName];
+        if (!field || !field.value || field.value.trim() === '') {
             Swal.fire({
                 icon: 'warning',
                 title: 'Campo Incompleto',
-                text: `Por favor, completa el campo: ${getFieldName(field)}`,
+                text: `Por favor, completa el campo: ${getFieldName(fieldName)}`,
             });
             return false;
         }
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(data.email)) {
+    if (!emailRegex.test(form.elements.email.value)) {
         Swal.fire({ icon: 'error', title: 'Email Inválido', text: 'Por favor, ingresa una dirección de correo electrónico válida.' });
         return false;
     }
 
     const phoneRegex = /^\d{10,15}$/;
-    if (!phoneRegex.test(data.phone.replace(/\s+/g, ''))) {
+    if (!phoneRegex.test(form.elements.phone.value.replace(/\s+/g, ''))) {
         Swal.fire({ icon: 'error', title: 'Teléfono Inválido', text: 'Por favor, ingresa un número de teléfono válido (solo números, sin espacios ni guiones).' });
         return false;
     }
@@ -105,7 +106,7 @@ function getFieldName(field) {
 document.addEventListener('DOMContentLoaded', function() {
     // --- Initialize EmailJS ---
     // RECUERDA: Reemplaza con tus claves reales de EmailJS
-    emailjs.init('mZp5cF-gAMXm8ABbP');
+    emailjs.init('YOUR_PUBLIC_KEY');
 
     // --- Initialize Form and Captcha ---
     const form = document.getElementById('appointment-form');
@@ -117,24 +118,16 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault(); // Previene el comportamiento por defecto del formulario
 
             // 1. Captcha Validation
-            const userAnswer = parseInt(document.getElementById('captcha').value, 10);
-            if (userAnswer !== captchaCorrectAnswer) {
+            const userAnswer = parseInt(form.elements.captcha.value, 10);
+            if (isNaN(userAnswer) || userAnswer !== captchaCorrectAnswer) {
                 Swal.fire({ icon: 'error', title: 'Captcha incorrecto', text: 'Por favor, resuelve la suma correctamente para continuar.' });
                 generateCaptcha();
-                document.getElementById('captcha').value = '';
+                form.elements.captcha.value = '';
                 return;
             }
 
             // 2. Form Field Validation
-            const formData = { 
-                name: document.getElementById('name').value,
-                company: document.getElementById('company').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                reason: document.getElementById('reason').value
-            };
-
-            if (!validateForm(formData)) {
+            if (!validateForm(form)) {
                 return;
             }
 
@@ -144,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             try {
                 // RECUERDA: Reemplaza con tus claves reales de EmailJS
-                await emailjs.sendForm('service_wq7irpk', 'template_k661ka6', this);
+                await emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this);
 
                 Swal.fire({ icon: 'success', title: '¡Solicitud Enviada!', text: 'Gracias por contactarnos. Nos pondremos en contacto contigo pronto.' });
                 form.reset();
@@ -166,7 +159,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuLinks = document.querySelectorAll('#mobile-menu a, #mobile-menu button');
     mobileMenuLinks.forEach(link => {
         link.addEventListener('click', () => {
-            // Cierra el menú al hacer clic en un enlace
             const mobileMenu = document.getElementById('mobile-menu');
             if(mobileMenu && !mobileMenu.classList.contains('hidden')) {
                 toggleMobileMenu();
