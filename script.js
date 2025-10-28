@@ -53,6 +53,15 @@ function toggleMobileMenu() {
     }
 }
 
+let captchaCorrectAnswer = 0;
+
+function generateCaptcha() {
+    const num1 = Math.floor(Math.random() * 10) + 1;
+    const num2 = Math.floor(Math.random() * 10) + 1;
+    captchaCorrectAnswer = num1 + num2;
+    document.getElementById('captcha-label').textContent = `¿Cuánto es ${num1} + ${num2}?`;
+}
+
 // Form handling
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize EmailJS with your Public Key
@@ -61,11 +70,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('appointment-form');
     const submitBtn = document.getElementById('submit-btn');
 
+    generateCaptcha(); // Generate initial captcha
+
     if (form) {
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            // Validate form data directly from form elements
+            // --- Captcha Validation ---
+            const userAnswer = parseInt(document.getElementById('captcha').value, 10);
+            if (userAnswer !== captchaCorrectAnswer) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Captcha incorrecto',
+                    text: 'Por favor, resuelve la suma correctamente para continuar.',
+                });
+                generateCaptcha(); // Generate a new question
+                document.getElementById('captcha').value = '';
+                return;
+            }
+
+            // --- Form Field Validation ---
             const name = document.getElementById('name').value;
             const company = document.getElementById('company').value;
             const email = document.getElementById('email').value;
@@ -82,21 +106,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
             try {
                 // Send email using EmailJS
-                await emailjs.sendForm('service_wq7irpk', 'template_k661ka6', this);
+                await emailjs.sendForm("service_wq7irpk","template_k661ka6", this);
 
-                // Show success message
-                showToast('¡Solicitud enviada!', 'Nos pondremos en contacto contigo pronto.', 'success');
+                // Show success message with SweetAlert2
+                Swal.fire({
+                    icon: 'success',
+                    title: '¡Solicitud Enviada!',
+                    text: 'Gracias por contactarnos. Nos pondremos en contacto contigo pronto.',
+                });
 
                 // Reset form
                 form.reset();
 
             } catch (error) {
                 console.error('Failed to send email:', error);
-                showToast('Error', 'Hubo un problema al enviar tu solicitud. Por favor, intenta de nuevo.', 'error');
+                // Show error message with SweetAlert2
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error al Enviar',
+                    text: 'Hubo un problema al enviar tu solicitud. Por favor, intenta de nuevo más tarde.',
+                });
             } finally {
-                // Reset button
+                // Reset button and generate new captcha
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Enviar Solicitud';
+                generateCaptcha();
             }
         });
     }
@@ -104,12 +138,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Form validation
 function validateForm(data) {
-    // Updated required fields to match the form
     const requiredFields = ['name', 'company', 'email', 'phone', 'reason'];
 
     for (const field of requiredFields) {
         if (!data[field] || data[field].trim() === '') {
-            showToast('Error', `Por favor completa el campo ${getFieldName(field)}.`, 'error');
+            Swal.fire({
+                icon: 'warning',
+                title: 'Campo Incompleto',
+                text: `Por favor, completa el campo: ${getFieldName(field)}`,
+            });
             return false;
         }
     }
@@ -117,14 +154,22 @@ function validateForm(data) {
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(data.email)) {
-        showToast('Error', 'Por favor ingresa un email válido.', 'error');
+        Swal.fire({
+            icon: 'error',
+            title: 'Email Inválido',
+            text: 'Por favor, ingresa una dirección de correo electrónico válida.',
+        });
         return false;
     }
 
     // Phone validation (basic)
     const phoneRegex = /^\d{10,15}$/;
     if (!phoneRegex.test(data.phone.replace(/\s+/g, ''))) {
-        showToast('Error', 'Por favor ingresa un teléfono válido (solo números, sin espacios ni guiones).', 'error');
+        Swal.fire({
+            icon: 'error',
+            title: 'Teléfono Inválido',
+            text: 'Por favor, ingresa un número de teléfono válido (solo números, sin espacios ni guiones).',
+        });
         return false;
     }
 
@@ -142,31 +187,6 @@ function getFieldName(field) {
     return fieldNames[field] || field;
 }
 
-// Toast notification system
-function showToast(title, description, type = 'info') {
-    // Remove existing toasts
-    const existingToasts = document.querySelectorAll('.toast');
-    existingToasts.forEach(toast => toast.remove());
-
-    // Create new toast
-    const toast = document.createElement('div');
-    toast.className = `toast ${type}`;
-    toast.innerHTML = `
-        <div class="title">${title}</div>
-        <div class="description">${description}</div>
-    `;
-
-    document.body.appendChild(toast);
-
-    // Show toast
-    setTimeout(() => toast.classList.add('show'), 100);
-
-    // Hide toast after 5 seconds
-    setTimeout(() => {
-        toast.classList.remove('show');
-        setTimeout(() => toast.remove(), 300);
-    }, 5000);
-}
 
 // WhatsApp functionality
 function openWhatsApp() {
